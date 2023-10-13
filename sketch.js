@@ -3,27 +3,27 @@ function setup() {
 }
 
 function draw() {
-  for (let i = 0; i < height; i++) {
-    let inter = map(i, 0, height, 0, 1);
-    let c = lerpColor(color(255), color(173, 216, 230), inter);
-    stroke(c);
-    line(0, i, width, i);
-  }
+  
+  // ... Código del degradado
+
+  // ... Código para dibujar el círculo al hacer clic
 }
 
-function mousePressed() {
-  // Obtener una posición aleatoria dentro del lienzo
-  let x = random(width);
-  let y = random(height);
+function mouseClicked() {
+  // Solo se ejecutará cuando se haga clic izquierdo
 
-  // Obtener un tamaño aleatorio para el círculo
+  // Generar un tamaño aleatorio para el círculo (entre 20 y 100 píxeles)
   let circleSize = random(20, 100);
 
-  // Obtener un color aleatorio para el círculo
+  // Obtener la posición del clic
+  let circleX = mouseX;
+  let circleY = mouseY;
+
+  // Generar un color aleatorio para el círculo
   let circleColor = color(random(255), random(255), random(255));
 
-  // Dibujar un círculo en la posición y tamaño aleatorios
-  noStroke();
+  // Dibujar el círculo en la posición del clic
   fill(circleColor);
-  ellipse(x, y, circleSize, circleSize);
+  noStroke();
+  ellipse(circleX, circleY, circleSize);
 }
